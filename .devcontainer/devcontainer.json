@@ -1,0 +1,6 @@
+{
+    "name": "ADM and ADSM demo container",
+    "dockerFile": "Dockerfile",
+    "postCreateCommand": ".devcontainer/start.sh"
+    //"postCreateCommand": "mkdir /usr/share/addb && git clone https://github.com/securitydesign/addb /usr/share/addb"
+  }
