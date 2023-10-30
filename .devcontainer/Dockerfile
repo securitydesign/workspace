@@ -18,10 +18,16 @@ RUN apt-get update && apt-get install -y \
     graphviz
 
 # Install tools, libraries, etc.
-RUN curl -O https://dl.google.com/go/go1.20.6.linux-arm64.tar.gz \
-    && tar -xvf go1.20.6.linux-arm64.tar.gz \
+RUN ARCH=$(uname -m) && \
+    case "$ARCH" in \
+        x86_64) GO_ARCH="amd64" ;; \
+        aarch64) GO_ARCH="arm64" ;; \
+        *) echo "Unsupported architecture: $ARCH" >&2; exit 1 ;; \
+    esac && \
+    curl -O https://dl.google.com/go/go1.20.6.linux-${GO_ARCH}.tar.gz \
+    && tar -xvf go1.20.6.linux-${GO_ARCH}.tar.gz \
     && mv go /usr/local \
-    && rm go1.20.6.linux-arm64.tar.gz
+    && rm go1.20.6.linux-${GO_ARCH}.tar.gz
 
 # Install ADM and ADSM
 RUN cd "$HOME" && \
