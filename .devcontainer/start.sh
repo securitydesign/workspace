@@ -1,5 +1,8 @@
 #!/bin/sh
 
+cp .devcontainer/tools/admci /usr/bin
+cp .devcontainer/tools/localci /usr/bin
+
 echo "--------------------"
 echo
 echo

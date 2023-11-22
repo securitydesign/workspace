@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Runs a command on localhost every time 
+# a tracked file / directory has changes.
+#       - Uses `entr` to monitor for file changes
+
+#       - SYNTAX: localci <directory_or_file_to_monitor> <command>
+
+
+MONITORED_DIR="$1"
+shift
+COMMAND="$@"
+
+while sleep 1; do
+    # List all paths from SCRIPT_PATH and send it to entr
+    find "$MONITORED_DIR" \( ! -regex '.*/\..*' \) -type f -print | \
+    entr -pdr -s \
+    "clear;
+    echo '==================================';
+    echo '-*-*-*-* RUNNING LOCAL CI *-*-*-*-';
+    echo -n 'DATE: ';
+    date;
+    echo '=================================='
+    $COMMAND
+    echo    '============== DONE =============='"
+done

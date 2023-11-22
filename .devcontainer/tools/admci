@@ -1,0 +1,3 @@
+#!/bin/bash
+
+localci "$1" "adm graph $1 && dot -T png -o graph.png graphviz.dot && rm graphviz.dot"
