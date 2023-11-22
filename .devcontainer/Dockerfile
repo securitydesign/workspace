@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     nano \
     make \
-    graphviz
+    graphviz \
+    entr
 
 # Install tools, libraries, etc.
 RUN ARCH=$(uname -m) && \
