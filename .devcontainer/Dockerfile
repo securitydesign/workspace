@@ -34,9 +34,9 @@ RUN ARCH=$(uname -m) && \
 RUN cd "$HOME" && \
     git clone https://github.com/vinayprograms/adm && \
     cd adm && make build && cp bin/adm /usr/bin/
-RUN cd "$HOME" && \
-    git clone https://github.com/vinayprograms/adsm && \
-    cd adsm && make build && cp bin/adsm /usr/bin/
+#RUN cd "$HOME" && \
+#    git clone https://github.com/vinayprograms/adsm && \
+#    cd adsm && make build && cp bin/adsm /usr/bin/
 
 # Clone ADDB
 RUN git clone https://github.com/securitydesign/addb /usr/share/addb

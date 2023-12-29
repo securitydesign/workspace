@@ -1,6 +1,16 @@
 {
     "name": "ADM and ADSM demo container",
     "dockerFile": "Dockerfile",
-    "postCreateCommand": ".devcontainer/start.sh"
-    //"postCreateCommand": "mkdir /usr/share/addb && git clone https://github.com/securitydesign/addb /usr/share/addb"
+    "postCreateCommand": ".devcontainer/start.sh",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "vinay-venkatesh.adm-vscode",
+          "ms-vscode-remote.remote-containers",
+          "ms-azuretools.vscode-docker",
+          "tintinweb.graphviz-interactive-preview",
+          "yzhang.markdown-all-in-one"
+        ]
+      }
+    }
   }
