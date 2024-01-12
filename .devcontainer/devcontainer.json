@@ -9,7 +9,8 @@
           "ms-vscode-remote.remote-containers",
           "ms-azuretools.vscode-docker",
           "tintinweb.graphviz-interactive-preview",
-          "yzhang.markdown-all-in-one"
+          "yzhang.markdown-all-in-one",
+          "redhat.vscode-yaml"
         ]
       }
     }
